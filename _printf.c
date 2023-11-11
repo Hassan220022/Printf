@@ -40,7 +40,7 @@ int _printf(const char *format, ...)
                     putchar('%');
                     count++;
                     break;
-                    
+/*
                 case 'd':
                 case 'i':
                     count += printf("%d", va_arg(args, int));
@@ -59,7 +59,7 @@ int _printf(const char *format, ...)
                     break;
                 case 'p':
                     count += printf("%p", va_arg(args, void *));
-                    break;
+                    break;*/
             }
         }
         else
