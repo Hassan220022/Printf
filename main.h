@@ -12,7 +12,6 @@
 typedef struct print_t
 {
 	char *format;
-
 	int (*f)(va_list);
 } print;
 
