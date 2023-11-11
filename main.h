@@ -2,7 +2,6 @@
 #define MAIN_H
 
 #include <limits.h>
-#include <stdio.h>
 #include <stdarg.h>
 
 /**
@@ -17,6 +16,8 @@ typedef struct print_t
 	int (*f)(va_list);
 } print;
 
+int _putchar(char c);
 int _printf(const char *format, ...);
 
-#endif /* MAIN_H */
+
+#endif
