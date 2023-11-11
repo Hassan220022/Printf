@@ -1,4 +1,5 @@
 #include "main.h"
+
 /**
 * _printf - Prints anything
 * @format: A string containing all the desired characters
@@ -6,13 +7,23 @@
 */
 int _printf(const char *format, ...)
 {
-
-	va_list args;
-	va_start(args, format);
-
+	print_t prints[] = {
+	{'c', print_char},
+	{'s', print_string},
+	{'%', print_percent},
+	{0, NULL}
+	};
 	unsigned int count = 0;
 
-	for (int i = 0; format[i]; i++)
+	unsigned int i, j;
+
+	va_list args;
+
+	va_start(args, format);
+
+
+	for (i = 0; format[i]; i++)
+
 	{
 		if (format[i] != '%')
 		{
@@ -22,7 +33,8 @@ int _printf(const char *format, ...)
 		else
 		{
 			i++;
-			for (int j = 0; prints[j].format; j++)
+			for (j = 0; prints[j].format; j++)
+
 			{
 				if (prints[j].format == format[i])
 				{
