@@ -6,17 +6,29 @@
 */
 int print_int(va_list args)
 {
-	unsigned int i = va_arg(args, int);
+	int n = va_arg(args, int);
 
-	if (i < 0)
+	unsigned int num;
+
+	int count = 0;
+
+	if (n < 0)
 	{
 		_putchar('-');
-		i = -i;
+		num = -n;
+		count++;
 	}
-	if (i / 10)
+	else
 	{
-		print_int(i / 10);
+		num = n;
 	}
-	_putchar(i % 10 + '0');
-	return (i);
+
+	if (num / 10)
+	{
+		count += print_number(num / 10);
+	}
+	_putchar((num % 10) + '0');
+	count++;
+
+	return (count);
 }

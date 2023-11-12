@@ -12,7 +12,7 @@ int print_char(va_list args);
 int print_string(va_list args);
 int print_percent(va_list args);
 int print_int(va_list args);
-
+void print_number(int n);
 
 /**
 * struct print_t - struct for printing various types
