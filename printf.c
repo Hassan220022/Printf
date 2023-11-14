@@ -6,6 +6,7 @@
  *
  * Return: Number of characters printed
  */
+
 int _printf(const char *format, ...)
 {
 	int count = 0, d;
