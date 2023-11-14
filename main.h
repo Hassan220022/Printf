@@ -7,11 +7,25 @@
 #include <stdarg.h>
 #include <limits.h>
 
+
+/**
+ * struct print_t - struct for printing various types
+ * @format: format specifier
+ * @f: function pointer to print
+ */
+typedef struct print_t
+{
+	char *format;
+
+	int (*f)(va_list);
+} print_t;
+
 int _printf(const char *format, ...);
-int intchar(int v);
+int format_reciever(const char *format, print_t bo3i[], va_list args);
 int _putchar(char c);
 int _puts(char *str);
 int print_int(va_list b);
+int print_number(va_list args);
 int print_percent(__attribute__((unused)) va_list args);
 int print_unsigned_integer(va_list list);
 int print_unsgined_number(unsigned int n);
@@ -25,16 +39,6 @@ int print_String(va_list args);
 int print_rev(va_list arg);
 int print_hex_aux(unsigned long int num);
 
-/**
- * struct print_t - struct for printing various types
- * @format: format specifier
- * @f: function pointer to print
- */
-typedef struct print_t
-{
-	char format;
 
-	int (*f)(va_list);
-} print_t;
 
 #endif

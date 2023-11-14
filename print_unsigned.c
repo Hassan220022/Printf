@@ -1,10 +1,10 @@
 #include "main.h"
 
 /**
-* print_unsigned_integer - Prints Unsigned integers
-* @list: List of all of the argumets
-* Return: a count of the numbers
-*/
+ * print_unsigned_integer - Prints Unsigned integers
+ * @list: List of all of the argumets
+ * Return: a count of the numbers
+ */
 
 int print_unsigned_integer(va_list list)
 {
@@ -21,10 +21,10 @@ int print_unsigned_integer(va_list list)
 }
 
 /**
-* print_unsgined_number - Prints an unsigned number
-* @n: unsigned integer to be printed
-* Return: The amount of numbers printed
-*/
+ * print_unsgined_number - Prints an unsigned number
+ * @n: unsigned integer to be printed
+ * Return: The amount of numbers printed
+ */
 
 int print_unsgined_number(unsigned int n)
 {
@@ -44,7 +44,7 @@ int print_unsgined_number(unsigned int n)
 
 	for (; div != 0;)
 	{
-		len += _putchar(int_to_char(num / div));
+		len += _putchar('0' + num / div);
 		num %= div;
 		div /= 10;
 	}

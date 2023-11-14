@@ -1,5 +1,5 @@
 #include "main.h"
-
+int print_number(va_list args);
 /**
  * print_int - prints an integer
  * @args: argument
@@ -10,6 +10,7 @@ int print_int(va_list args)
 	int len;
 
 	len = print_number(args);
+	return (len);
 }
 
 /**
@@ -42,7 +43,7 @@ int print_number(va_list args)
 
 	for (; div != 0;)
 	{
-		len += _putchar(int_to_char(num / div));
+		len += _putchar('0' + num / div);
 		num %= div;
 		div /= 10;
 	}
