@@ -27,14 +27,14 @@ int _printf(const char *format, ...)
                {
                case 'c':
                     ch = va_arg(args, int);
-                    putchar(ch);
+                    _putchar(ch);
                     count++;
                     break;
                case 's':
                     str = va_arg(args, char *);
                     while (*str)
                     {
-                         putchar(*str);
+                         _putchar(*str);
                          str++;
                          count++;
                     }
@@ -42,42 +42,42 @@ int _printf(const char *format, ...)
                case 'd':
                case 'i':
                     d = va_arg(args, int);
-                    count += printf("%d", d);
+                    count += _putchar( d);
                     break;
                case 'u':
                     u = va_arg(args, unsigned int);
-                    count += printf("%u", u);
+                    count += _putchar(u);
                     break;
                case 'o':
                     u = va_arg(args, unsigned int);
-                    count += printf("%o", u);
+                    count += _putchar(u);
                     break;
                case 'x':
                     u = va_arg(args, unsigned int);
-                    count += printf("%x", u);
+                    count += _putchar(u);
                     break;
                case 'X':
                     u = va_arg(args, unsigned int);
-                    count += printf("%X", u);
+                    count += _putchar(u);
                     break;
                case 'p':
                     p = va_arg(args, void *);
-                    count += printf("%p", p);
+                    count += _putchar(p);
                     break;
                case '%':
-                    putchar('%');
+				   _putchar('%');
                     count++;
                     break;
                default:
-                    putchar('%');
-                    putchar(*format);
+				   _putchar('%');
+				   _putchar(*format);
                     count += 2;
                     break;
                }
           }
           else
           {
-               putchar(*format);
+               _putchar(*format);
                count++;
           }
           format++;
