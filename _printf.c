@@ -5,12 +5,20 @@
 * @format: A string containing all the desired characters
 * Return: The number of characters printed
 */
+
 int _printf(const char *format, ...)
 {
 	print_t prints[] = {
 	{'c', print_char},
 	{'s', print_string},
 	{'%', print_percent},
+	{'d', print_decimal},
+	{'i', print_int},
+	{'b', print_binary},
+	{'x', low_up},
+	{'X', up_low},
+	{'u', print_unsigned},
+	{'o', print_oct},
 	{0, NULL}
 	};
 	unsigned int count = 0;
