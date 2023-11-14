@@ -1,16 +1,18 @@
+#include <stdio.h>
 #include "main.h"
 
 /**
-
-_printf - Custom printf function
-
-@format: Format string
-
-Return: Number of characters printed
+ * _printf - Custom printf function
+ *
+ * @format: Format string
+ *
+ * Return: Number of characters printed
 */
+
 int _printf(const char *format, ...)
 {
-	int count = 0, d;
+	int count = 0;
+	int d;
 	char *str;
 	char ch;
 	unsigned int u;
