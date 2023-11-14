@@ -15,6 +15,7 @@ int _printf(const char *format, ...)
 	void *p;
 
 	va_list args;
+
 	va_start(args, format);
 
 	while (*format != '\0')
@@ -25,15 +26,15 @@ int _printf(const char *format, ...)
 			switch (*format)
 			{
 				case 'c':
-					ch = (char)va_arg(args, int);
-					_putchar(ch);
+					ch = va_arg(args, int);
+					putchar(ch);
 					count++;
 					break;
 				case 's':
 					str = va_arg(args, char *);
 					while (*str)
 					{
-						_putchar(*str);
+						putchar(*str);
 						str++;
 						count++;
 					}
@@ -41,38 +42,47 @@ int _printf(const char *format, ...)
 				case 'd':
 				case 'i':
 					d = va_arg(args, int);
-					count += _putchar((char)d);
+					count += printf("%d", d);
 					break;
 				case 'u':
+					u = va_arg(args, unsigned int);
+					count += printf("%u", u);
+					break;
 				case 'o':
+					u = va_arg(args, unsigned int);
+					count += printf("%o", u);
+					break;
 				case 'x':
+					u = va_arg(args, unsigned int);
+					count += printf("%x", u);
+					break;
 				case 'X':
 					u = va_arg(args, unsigned int);
-					count += _putchar((char)u);
+					count += printf("%X", u);
 					break;
 				case 'p':
 					p = va_arg(args, void *);
-					count += _putchar((char)p);
+					count += printf("%p", p);
 					break;
 				case '%':
-					_putchar('%');
+					putchar('%');
 					count++;
 					break;
 				default:
-					_putchar('%');
-					_putchar(*format);
+					putchar('%');
+					putchar(*format);
 					count += 2;
 					break;
 			}
 		}
 		else
 		{
-			_putchar(*format);
+			putchar(*format);
 			count++;
 		}
 		format++;
 	}
 
 	va_end(args);
-	return count;
+	return (count);
 }
