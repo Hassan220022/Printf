@@ -15,10 +15,9 @@ int _printf(const char *format, ...)
 		{"i", print_int},
 		{"c", print_char},
 		{"s", print_string},
-		{"b", print_binary},
+		{"b", _print_binary},
 		{"u", print_unsigned_integer},
 		{"o", print_octal},
-		{"x", print_hex},
 		{"r", print_rev},
 	};
 	va_list args;
@@ -29,7 +28,7 @@ int _printf(const char *format, ...)
 	}
 
 	va_start(args, format);
-	num = format_reciever(format, bor3i, args);
+	num = _format_reciever(format, bor3i, args);
 	va_end(args);
 	return (num);
 }

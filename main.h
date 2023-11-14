@@ -21,7 +21,7 @@ typedef struct print_t
 } print_t;
 
 int _printf(const char *format, ...);
-int format_reciever(const char *format, print_t bo3i[], va_list args);
+int _format_reciever(const char *format, print_t bo3i[], va_list args);
 int _putchar(char c);
 int _puts(char *str);
 int print_int(va_list b);
@@ -31,7 +31,7 @@ int print_unsigned_integer(va_list list);
 int print_unsgined_number(unsigned int n);
 int print_char(va_list args);
 int print_string(va_list args);
-int print_binary(va_list args);
+int _print_binary(va_list args);
 int print_octal(va_list args);
 int print_hex(va_list args);
 int print_HEX(va_list args);
