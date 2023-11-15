@@ -107,8 +107,9 @@ int print_rot13(va_list args, params_t *params);
 int _isdigit(int c);
 int _strlen(char *s);
 int print_number(char *str, params_t *params);
-int print_number_right_shift(char *str, params_t *params);
-int print_number_left_shift(char *str, params_t *params);
+int print_number_right_side(char *str, params_t *params);
+int print_number_left_side(char *str, params_t *params);
+
 char *get_precision(char *p, params_t *params, va_list args);
 
 /* int parameters */
