@@ -6,9 +6,20 @@
 *
 * Return: If successful, the character written. Otherwise, -1.
 */
+
 int _putchar(char c)
 {
-	return (write(1, &c, 1));
+	static int ne;
+	static char buf[OUTPUT_BUF_SIZE];
+
+	if (c == BUF_FLUSH || ne >= OUTPUT_BUF_SIZE)
+	{
+		write(1, buf, ne);
+		ne = 0;
+	}
+	if (c != BUF_FLUSH)
+		buf[ne++] = c;
+	return (1);
 }
 
 /**
@@ -17,13 +28,12 @@ int _putchar(char c)
  *
  * Return: The number of characters printed.
  */
+
 int _puts(char *str)
 {
-	register int i;
+	char *n = str;
 
-	for (i = 0; str[i]; i++)
-	{
-		_putchar(str[i]);
-	}
-	return (i);
+	while (*str)
+		_putchar(*str++);
+	return (str - n);
 }
