@@ -80,7 +80,6 @@ int print_number_right_side(char *str, params_t *params)
 		str++;
 	else
 		num1 = 0;
-
 	if ((params->plus_flag && !num2) ||
 			(!params->plus_flag && params->space_flag && !num2))
 		a++;
