@@ -93,7 +93,7 @@ int print_binary(va_list args, params_t *params)
 int print_octal(va_list args, params_t *params) {
 	unsigned long num;
 	char *str;
-	int i;
+	int i = 0;
 
 	if (params->l_modifier)
 		num = (unsigned long) va_arg(args, unsigned long);
