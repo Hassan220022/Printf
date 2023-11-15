@@ -93,7 +93,7 @@ int get_modifier(char *s, params_t *params);
 char *get_width(char *s, params_t *params, va_list args);
 
 /* adv 2 */
-int _print_binary(va_list args, params_t *params);
+int print_binary(va_list args, params_t *params);
 int print_octal(va_list args, params_t *params);
 int print_hex(va_list args, params_t *params);
 int print_HEX(va_list args, params_t *params);
