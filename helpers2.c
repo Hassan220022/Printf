@@ -5,11 +5,11 @@
  * @c: the character
  *
  * Return: 1 if success, else 0
-*/
+ */
 
 int _isdigit(int c)
 {
-	return ( c >= '0' && c <= '9');
+	return (c >= '0' && c <= '9');
 }
 
 /**
@@ -17,7 +17,7 @@ int _isdigit(int c)
  * @s: the string
  *
  * Return: the length
-*/
+ */
 
 int _strlen(char *s)
 {
@@ -34,7 +34,7 @@ int _strlen(char *s)
  * @params: the parameter
  *
  * Return: the character
-*/
+ */
 
 int print_number(char *str, params_t *params)
 {
@@ -66,7 +66,7 @@ int print_number(char *str, params_t *params)
  * @params: the parameter
  *
  * Return: the character
-*/
+ */
 
 int print_number_right_side(char *str, params_t *params)
 {
@@ -81,23 +81,23 @@ int print_number_right_side(char *str, params_t *params)
 	else
 		num1 = 0;
 	if ((params->plus_flag && !num2) ||
-			(!params->plus_flag && params->space_flag && !num2))
+		(!params->plus_flag && params->space_flag && !num2))
 		a++;
 	if (num1 && rs == '0')
 		n += _putchar('-');
 	if (params->plus_flag && !num2 && rs == '0' && !params->unsign)
 		n += _putchar('+');
 	else if (!params->plus_flag && params->space_flag && !num2 &&
-	!params->unsign && params->zero_flag)
+			 !params->unsign && params->zero_flag)
 		n += _putchar(' ');
 	while (a++ < params->width)
-		n+= _putchar(rs);
+		n += _putchar(rs);
 	if (num1 && rs == ' ')
 		n += _putchar('-');
 	if (params->plus_flag && !num2 && rs == ' ' && !params->unsign)
 		n += _putchar('+');
 	else if (!params->plus_flag && params->space_flag && !num2 &&
-	!params->unsign && !params->zero_flag)
+			 !params->unsign && !params->zero_flag)
 		n += _putchar(' ');
 	n += _puts(str);
 	return (n);
@@ -109,7 +109,7 @@ int print_number_right_side(char *str, params_t *params)
  * @params: the parameter
  *
  * Return: the character
-*/
+ */
 
 int print_number_left_side(char *str, params_t *params)
 {

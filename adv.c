@@ -6,7 +6,7 @@
  * @params: para struct
  *
  * Return: Number of characters printed
-*/
+ */
 
 int print_hex(va_list args, params_t *params)
 {
@@ -37,7 +37,7 @@ int print_hex(va_list args, params_t *params)
  * @params: para struct
  *
  * Return: Number of characters printed
-*/
+ */
 
 int print_HEX(va_list args, params_t *params)
 {
@@ -68,7 +68,7 @@ int print_HEX(va_list args, params_t *params)
  * @params: para struct
  *
  * Return: Number of characters printed
-*/
+ */
 
 int print_binary(va_list args, params_t *params)
 {
@@ -79,7 +79,7 @@ int print_binary(va_list args, params_t *params)
 	if (params->hashtag_flag && i)
 		*--str = '0';
 	params->unsign = 1;
-	return (b += print_number(str,params));
+	return (b += print_number(str, params));
 }
 
 /**
@@ -88,19 +88,20 @@ int print_binary(va_list args, params_t *params)
  * @params: para struct
  *
  * Return: Number of characters printed
-*/
+ */
 
-int print_octal(va_list args, params_t *params) {
+int print_octal(va_list args, params_t *params)
+{
 	unsigned long num;
 	char *str;
 	int i = 0;
 
 	if (params->l_modifier)
-		num = (unsigned long) va_arg(args, unsigned long);
+		num = (unsigned long)va_arg(args, unsigned long);
 	else if (params->h_modifier)
-		num = (unsigned short int) va_arg(args, unsigned int);
+		num = (unsigned short int)va_arg(args, unsigned int);
 	else
-		num = (unsigned int) va_arg(args, unsigned int);
+		num = (unsigned int)va_arg(args, unsigned int);
 	str = convert(num, 8, CONVERT_UNSIGNED, params);
 
 	if (params->hashtag_flag && num)

@@ -12,11 +12,10 @@
 
 #define NULL_STRING "(null)"
 
-#define PARAMS_INIT {0, 0, 0, 0, 0, 0, 0, 0, 0, 0};
+#define PARAMS_INIT {0, 0, 0, 0, 0, 0, 0, 0, 0, 0}
 
-#define CONVERT_LOWERCASE  1
-#define CONVERT_UNSIGNED   2
-
+#define CONVERT_LOWERCASE 1
+#define CONVERT_UNSIGNED 2
 
 /**
  * struct parameters - parameters structure
@@ -34,24 +33,23 @@
  *
  * @h_modifier: use it if h_modifier is needed
  * @l_modifier: use it if l_modifier is needed
-*/
+ */
 
 typedef struct parameters
 {
-	unsigned int unsign        : 1;
-	unsigned int plus_flag     : 1;
-	unsigned int space_flag    : 1;
-	unsigned int hashtag_flag  : 1;
-	unsigned int zero_flag     : 1;
-	unsigned int minus_flag    : 1;
+	unsigned int unsign : 1;
+	unsigned int plus_flag : 1;
+	unsigned int space_flag : 1;
+	unsigned int hashtag_flag : 1;
+	unsigned int zero_flag : 1;
+	unsigned int minus_flag : 1;
 
-	unsigned int width         : 1;
-	unsigned int precision     : 1;
+	unsigned int width : 1;
+	unsigned int precision : 1;
 
-	unsigned int h_modifier    : 1;
-	unsigned int l_modifier    : 1;
+	unsigned int h_modifier : 1;
+	unsigned int l_modifier : 1;
 } params_t;
-
 
 /**
  * struct specify - struct for printing various types
@@ -69,7 +67,6 @@ typedef struct specify
 
 int _putchar(int c);
 int _puts(char *str);
-
 
 int _printf(const char *format, ...);
 
@@ -114,6 +111,5 @@ char *get_precision(char *p, params_t *params, va_list args);
 
 /* int parameters */
 void init_params(params_t *params, va_list args);
-
 
 #endif
