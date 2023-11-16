@@ -7,7 +7,6 @@
  *
  * Return: The number of characters printed
  */
-
 int print_char(va_list args, params_t *params)
 {
 	char rs = ' ';
