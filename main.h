@@ -107,6 +107,7 @@ int print_number(char *str, params_t *params);
 int print_number_right_side(char *str, params_t *params);
 int print_number_left_side(char *str, params_t *params);
 
+/* the strings */
 char *get_precision(char *p, params_t *params, va_list args);
 
 /* int parameters */

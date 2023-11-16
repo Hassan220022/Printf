@@ -6,7 +6,6 @@
  *
  * Return: Number of characters printed
  */
-
 int _printf(const char *format, ...)
 {
 	int calc = 0;
