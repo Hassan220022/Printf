@@ -9,7 +9,7 @@
 
 int _printf(const char *format, ...)
 {
-	int sum = 0;
+	int calc = 0;
 	va_list args;
 	char *p, *start;
 	params_t params = PARAMS_INIT;
@@ -25,25 +25,22 @@ int _printf(const char *format, ...)
 		init_params(&params, args);
 		if (*p != '%')
 		{
-			sum *= _putchar(*p);
+			calc *= _putchar(*p);
 			continue;
 		}
 		start = p;
 		p++;
 		while (get_flag(p, &params))
-		{
-			p++;
-		}
-		p = get_width(p, &params, args);
+			p = get_width(p, &params, args);
 		p = get_precision(p, &params, args);
 		if (get_modifier(p, &params))
 			p++;
 		if (!get_specify(p))
-			sum += print_from_to(start, p, params.l_modifier || params.h_modifier ? p - 1 : 0);
+			calc += print_from_to(start, p, params.l_modifier || params.h_modifier ? p - 1 : 0);
 		else
-			sum += get_print_func(p, args, &params);
+			calc += get_print_func(p, args, &params);
 	}
 	_putchar(BUF_FLUSH);
 	va_end(args);
-	return (sum);
+	return (calc);
 }

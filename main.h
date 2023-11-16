@@ -67,7 +67,7 @@ typedef struct specify
 	int (*f)(va_list, params_t *);
 } specify_t;
 
-int _putchar(char c);
+int _putchar(int c);
 int _puts(char *str);
 
 

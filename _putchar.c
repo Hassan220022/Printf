@@ -7,7 +7,7 @@
 * Return: If successful, the character written. Otherwise, -1.
 */
 
-int _putchar(char c)
+int _putchar(int c)
 {
 	static int ne;
 	static char buf[OUTPUT_BUF_SIZE];
